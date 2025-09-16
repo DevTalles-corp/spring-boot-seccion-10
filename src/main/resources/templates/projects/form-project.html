@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestión de Proyectos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-form-project.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div th:insert="~{fragments/nav-admin :: nav-admin}" ></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="contact">
+                <h2>Formulario de Proyecto</h2>
+                <form class="contact-form" th:action="@{/projects/save}" th:object="${projectDto}" method="post" enctype="multipart/form-data">
+                    <input type="text" th:field="*{title}" placeholder="Título">
+                    <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error-message"></div>
+
+                    <textarea th:field="*{description}" placeholder="Descripción" rows="6"></textarea>
+                    <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="error-message"></div>
+
+                    <input type="url" th:field="*{projectUrl}" placeholder="URL del Proyecto" />
+                    <div th:if="${#fields.hasErrors('projectUrl')}" th:errors="*{projectUrl}" class="error-message"></div>
+
+                    <label>Imagen del Proyecto:</label>
+                    <input type="file" name="file" />
+                    <div th:if="${#fields.hasErrors('imageUrl')}" th:errors="*{imageUrl}" class="error-message"></div>
+
+                    <input type="number" th:field="*{personalInfoId}" placeholder="ID Información Personal" />
+                    <div th:if="${#fields.hasErrors('personalInfoId')}" th:errors="*{personalInfoId}" class="error-message"></div>
+
+                    <button type="submit">Guardar Proyecto</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <div th:insert="~{fragments/footer :: footer}" ></div>
+</body>
+</html>

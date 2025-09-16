@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<section id="contact" th:fragment="contact">
+    <h2>LET'S HAVE A CHAT</h2>
+    <form class="contact-form"  action="https://formspree.io/f/xbladbzy" method="post" >
+        <input name="name" type="text" placeholder="Your Name" required>
+        <input name="email" type="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+</body>
+</html>

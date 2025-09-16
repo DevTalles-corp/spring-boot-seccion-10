@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Error</title>
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div th:insert="~{fragments/nav :: nav}" ></div>
+    </div>
+</header>
+
+<main>
+    <div class="main-error-container">
+        <section class="error-page">
+            <h2>¡Lo sentimos! Ha ocurrido un error.</h2>
+            <p>No pudimos procesar tu solicitud en este momento. Por favor, intenta de nuevo más tarde.</p>
+            <a th:href="@{/projects}">Volver a Proyectos</a>
+        </section>
+    </div>
+</main>
+
+<div th:insert="~{fragments/footer :: footer}" ></div>
+</body>
+</html>

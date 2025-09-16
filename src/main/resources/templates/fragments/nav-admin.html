@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+        <nav th:fragment="nav-admin">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a th:href="@{/personal-info}">Personal Info</a></li>
+                <li><a th:href="@{/education}">Education</a></li>
+                <li><a th:href="@{/experience}">Experience</a></li>
+                <li><a th:href="@{/projects}">Projects</a></li>
+                <li><a th:href="@{/skills}">Skills</a></li>
+            </ul>
+        </nav>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/general.css">
+
+    <title>Portfolio</title>
+</head>
+<body>
+    <header class="line-white">
+        <div class="container">
+            <div th:insert="~{fragments/nav :: nav}" ></div>
+            <div th:insert="~{sections/personal-info-section :: hero}" ></div>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="container">
+            <div th:insert="~{fragments/about :: about}" class="line-white"></div>
+            <div th:insert="~{sections/education-section :: education}" class="line-white"></div>
+            <div th:insert="~{sections/skills-section :: skills}" class="line-white"></div>
+            <div th:insert="~{sections/experience-section :: experience}" class="line-white"></div>
+            <div th:insert="~{sections/project-section :: projects}" class="line-white"></div>
+
+            <div th:insert="~{sections/contact-section :: contact}" ></div>
+        </div>
+
+    </main>
+
+    <div th:insert="~{fragments/footer :: footer}" ></div>
+</body>
+</html>

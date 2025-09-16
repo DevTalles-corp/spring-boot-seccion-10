@@ -1,0 +1,68 @@
+main .container {
+    background-color: var(--color-dark);
+    padding: 40px;
+}
+.admin-section {
+    padding: 40px 20px;
+    color: var(--color-white);
+}
+.admin-section h2 {
+    color: var(--color-primary-gold);
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+.admin-section a { /* Estilo para el botón "Crear nuevo proyecto" */
+    display: inline-block;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    transition: background-color 0.3s ease;
+}
+.admin-section a:hover {
+    background-color: var(--color-primary-gold);
+    color: var(--color-dark);
+}
+/* Estilos para la tabla de administración */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina los espacios entre bordes de celdas */
+    margin-top: 2rem;
+    background-color: var(--color-blue); /* Fondo de tabla */
+    border-radius: 0.8rem; /* Bordes redondeados para la tabla */
+    overflow: hidden; /* Asegura que los bordes redondeados se vean */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.admin-table th,
+.admin-table td {
+    padding: 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-primary-sky); /* Separador de filas */
+}
+.admin-table th {
+    background-color: var(--color-secondary-green); /* Fondo para encabezados */
+    color: var(--color-dark); /* Texto oscuro en encabezados */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+.admin-table td {
+    color: var(--color-white);
+    font-size: 0.95rem;
+}
+.admin-table tbody tr:last-child td {
+    border-bottom: none; /* No hay borde en la última fila */
+}
+.admin-table img {
+    max-width: 80px; /* Tamaño de miniatura */
+    height: auto;
+    border-radius: 0.3rem; /* Bordes suaves para la imagen */
+}
+/* Estilo para las acciones (si las agregas más adelante) */
+.admin-table td:last-child {
+    text-align: center;
+}

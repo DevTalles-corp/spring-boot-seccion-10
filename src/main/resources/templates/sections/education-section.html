@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+
+    <section id="education" th:fragment="education">
+        <h2>MY EDUCATION</h2>
+        <div class="education-timeline">
+            <div class="timeline-item"  th:each="edu : ${educationList}">
+                <h3  th:text="${edu.degree} + ' - ' + ${edu.institution}"></h3>
+                <p class="timeline-date" th:text="${edu.startDate} + ' - ' + ${edu.endDate}"></p>
+                <p th:text="${edu.description}"></p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

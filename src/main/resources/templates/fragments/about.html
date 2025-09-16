@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<section id="about" th:fragment="about">
+    <h2>WHO AM I ?</h2>
+    <p th:text="${personalInfo.profileDescription}"></p>
+    <a href="#projects">
+        <button>SHOW MY PROJECTS</button>
+    </a>
+
+</section>
+</body>
+</html>

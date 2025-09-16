@@ -1,0 +1,36 @@
+
+/* Estilos para el contenedor de acciones administrativas (ej. "Volver" y "Cerrar Sesión") */
+.admin-actions {
+    display: flex; /* Alinea los elementos en una fila */
+    justify-content: flex-start; /* Alinea los elementos a la derecha */
+    gap: 15px; /* Espacio entre los enlaces */
+    margin-bottom: 25px; /* Espacio debajo de las acciones */
+    padding-bottom: 15px; /* Padding interno para separación visual */
+    padding-top: 15px;
+    padding-left: 15px;
+    border-bottom: 1px solid #eee; /* Línea separadora sutil, si aún quieres una */
+}
+
+/* Estilos para los enlaces dentro de admin-actions */
+.admin-actions a {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: var(--color-blue); /* Usando tu variable de azul */
+    color: white; /* Texto blanco para contraste */
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.admin-actions a:hover {
+    background-color: var(--color-primary-gold); /* Usando tu variable de amarillo al pasar el ratón */
+    color: var(--color-dark); /* Color de texto oscuro para contraste con el amarillo */
+    transform: translateY(-2px); /* Un pequeño levantamiento para el efecto hover */
+}
+.admin-section h2{
+    color: var(--color-primary-gold);
+}

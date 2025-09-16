@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulario de Habilidad</title>
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/form-style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div th:insert="~{fragments/nav-admin :: nav-admin}" ></div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <section class="admin-section">
+            <div class="admin-actions">
+                <a th:href="@{/skills}">Volver a la lista de Habilidades</a>
+                <a th:href="@{/logout}">Cerrar Sesión</a>
+            </div>
+            <h2 th:text="${skillDto.id==null ? 'Crear nueva habilidad laboral' : 'Editar habilidad laboral'}" >Formulario de Habilidad</h2>
+
+            <form class="contact-form" method="post" th:action="@{/skills/save}" th:object="${skillDto}">
+                <input type="hidden" th:field="*{id}" />
+
+                <input type="text" th:field="*{name}" placeholder="Nombre de la habilidad" required>
+                <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error-message"></div>
+
+                <input type="number" th:field="*{levelPercentage}" placeholder="Porcentaje (0-100)" required min="0" max="100">
+                <div th:if="${#fields.hasErrors('levelPercentage')}" th:errors="*{levelPercentage}" class="error-message"></div>
+
+                <input type="text" th:field="*{iconClass}" placeholder="Clase del ícono (ej. fas fa-code)" required>
+                <div th:if="${#fields.hasErrors('iconClass')}" th:errors="*{iconClass}" class="error-message"></div>
+
+                <input type="number" th:field="*{personalInfoId}" placeholder="ID Información Personal" required>
+                <div th:if="${#fields.hasErrors('personalInfoId')}" th:errors="*{personalInfoId}" class="error-message"></div>
+
+                <button type="submit" class="btn">Guardar Habilidad</button>
+            </form>
+        </section>
+    </div>
+</main>
+
+<div th:insert="~{fragments/footer :: footer}" ></div>
+</body>
+</html>

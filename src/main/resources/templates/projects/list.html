@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de proyectos</title>
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/list.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div th:insert="~{fragments/nav-admin :: nav-admin}" ></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="admin-section">
+                <h2>Proyectos guardados</h2>
+                <a th:href="@{projects/new-project}">Crear nuevo proyecto</a>
+                <table class="admin-table">
+                    <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>URL del proyecto</th>
+                        <th>Imagen</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="project : ${projects}">
+                        <td th:text="${project.title}">Título del Proyecto</td>
+                        <td th:text="${project.description}">Descripción</td>
+                        <td th:text="${project.projectUrl}">URL</td>
+                        <td>
+                            <img th:src="@{${project.imageUrl}}" width="150" height="150" alt="Imagen del proyecto">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+
+    <div th:insert="~{fragments/footer :: footer}" ></div>
+</body>
+</html>
