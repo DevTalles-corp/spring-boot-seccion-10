@@ -44,7 +44,7 @@ public class ExperienceController {
     }
 
     @PostMapping("/save")
-    public String saveSkill(@Valid @ModelAttribute("experienceDto") ExperienceDto experienceDto, BindingResult result,
+    public String saveExperience(@Valid @ModelAttribute("experienceDto") ExperienceDto experienceDto, BindingResult result,
                             RedirectAttributes redirectAttributes){
         if (result.hasErrors()){
             return "experience/form-experience";

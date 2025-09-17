@@ -10,8 +10,7 @@ header {
     text-align: center;
     background-size: cover;
     background-position: center;
-    position: relative; 
-    overflow: hidden; 
+    position: relative;
 }
 
 .profile-image-container {
